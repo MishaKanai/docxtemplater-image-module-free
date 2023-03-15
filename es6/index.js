@@ -100,9 +100,6 @@ class ImageModule {
 		if (!tagValue) {
 			return {value: this.fileTypeConfig.tagTextXml};
 		}
-		else if (typeof tagValue === "object") {
-			return this.getRenderedPart(part, tagValue.rId, tagValue.sizePixel);
-		}
 		const imgManager = new ImgManager(this.zip, options.filePath, this.xmlDocuments, this.fileType);
 		const imgBuffer = this.options.getImage(tagValue, part.value);
 		const rId = imgManager.addImageRels(this.getNextImageName(), imgBuffer);
